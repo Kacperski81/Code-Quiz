@@ -13,12 +13,13 @@ var quizTime = 75;
 var userInitials = "";
 var questionNumber = 0;
 
+//
 function showQuestion(number) {
     questionsWrapper.classList.remove('hide');
     if(number < questions.length) {
         questionTitle.textContent = questions[number].questionTitle;
         for(var answer in questions[number].answers) {
-            choices.insertAdjacentHTML('beforeend',`<p>${Number(answer) + 1}. ${questions[number].answers[answer]}</p>`);
+            choices.insertAdjacentHTML('beforeend',`<button>${Number(answer) + 1}. ${questions[number].answers[answer]}</button>`);
         }  
     }
 }
@@ -67,7 +68,7 @@ function startQuiz(event) {
     showQuestion(questionNumber);
     questionsWrapper.addEventListener('click',function(event) {
         // check user answer
-        if(event.target.nodeName.includes('P')) {
+        if(event.target.nodeName.includes('BUTTON')) {
             questionNumber++;
             console.log(event.target.textContent.slice(3))
             if(event.target.textContent.slice(3) === questions[questionNumber-1].correctAnswer) {
