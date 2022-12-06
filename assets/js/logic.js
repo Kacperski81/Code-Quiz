@@ -58,8 +58,9 @@ function startQuiz(event) {
                 userInitials += userInitialsInput.value;
                 userScores = [...userScores,{initials: userInitials,score: quizTime}];
                 localStorage.setItem('score',JSON.stringify(userScores));
-                window.location = window.location.pathname.slice(0, -10) + "highscores.html";
-            });            
+                // window.location = window.location.pathname.slice(0, -10) + "highscores.html";
+                window.location.href = "highscores.html"
+            });             
         }
     }, 1000);
     startScreen.classList.add('hide');
