@@ -66,6 +66,11 @@ li:nth-child(odd) {
   text-align: center;
 }
 
+.user-answer {
+  border-top: 1px solid black;
+  padding-top: 10px;
+}
+
 .scores {
   position: absolute;
   top: 10px;
