@@ -2,9 +2,7 @@ var highscores = document.querySelector('#highscores');
 var userScores = JSON.parse(localStorage.getItem('score')) || [];
 var clearBtn = document.querySelector('#clear');
 
-// sort user scores
-// To Do
-
+// sort user scores in descending order
 userScores.sort((a,b) => a.score - b.score);
 
 // Display user score
